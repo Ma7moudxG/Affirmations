@@ -1,4 +1,4 @@
-import { component$, createContextId, Slot, useContextProvider, useStore } from "@builder.io/qwik";
+import { component$, createContextId, Slot, useContextProvider, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import Modal from "~/components/modal";
 
 export const MyContext = createContextId('qwik-affirmations')
@@ -11,6 +11,11 @@ export default component$(() => {
 
   useContextProvider(MyContext, state)
 
+  useVisibleTask$(() => {
+    if(localStorage.getItem('qeik-affirmations')) {
+      state.affirmations = JSON.parse(localStorage.getItem('qwik-affirmations')).affirmations
+    }
+  })
 
 
   return (
