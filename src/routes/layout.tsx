@@ -21,7 +21,7 @@ export default component$(() => {
           state.openModal = !state.openModal
         }} class="fa-solid fa-plus cursor-pointer"></i>
       </header>
-      <main class="flex-1 flex flex-col max-w-[1200px] mx-auto w-full">
+      <main class="flex-1 flex flex-col max-w-[1200px] mx-auto w-full gap-2 justify-center items-center">
         <Slot />
       </main>
       <footer>
